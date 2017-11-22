@@ -1,13 +1,428 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Testing Githup Pages</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Parallax Template - Materialize</title>
+
+    <!-- CSS  -->
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-<h1>This works...</h1>
+<nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo hide-on-med-and-down grey-text text-darken-2 light">Joint
+            Replacement Coach</a>
+
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#" onclick="slowScrollTo('#programs')">Programs</a></li>
+            <li><a href="#" onclick="slowScrollTo('#video')">Information</a></li>
+            <li><a href="#" onclick="slowScrollTo('#call')">Contact Us</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+            <li>
+                <div class="text-center center">
+                    <img id="bannerLogo" src="/media/Logos/VectorCharacter_WhiteBackground_128x128.png"
+                         class="responsive-img circle">
+                </div>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a href="#" onclick="slowScrollTo('#programs')">Programs</a></li>
+            <li><a href="#" onclick="slowScrollTo('#video')">Information</a></li>
+            <li><a href="#" onclick="slowScrollTo('#call')">Contact Us</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger button-collapse">
+            <i class="material-icons">menu</i>
+        </a>
+    </div>
+</nav>
+
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+
+        <div class="container">
+            <h1 class="header center teal-text text-lighten-2 readable-on-dark">Hip &amp; Knee Joint Replacement</h1>
+            <div class="row center">
+                <img id="bannerLogo" src="/media/Logos/VectorCharacter_WhiteBackground_128x128.png"
+                     class="responsive-img circle z-depth-5 hide-on-med-and-down">
+                <h4 class="header col s12 light readable-on-dark  no-buffer">
+                    FIT For Surgery
+                    &amp;
+                    FIT Beyond Surgery
+                </h4>
+                <h4 class="header col s12 light readable-on-dark  no-buffer">
+                    Pre &amp; Post Operative Coaching Programs
+                </h4>
+            </div>
+        </div>
+
+    </div>
+    <div class="parallax"><img src="/media/background1.jpg" alt="Unsplashed background img 1"></div>
+</div>
+
+
+<div class="container">
+
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m12 l12 xl12 text-darken-4 flow-text center">
+                <i class="material-icons grey-text">question_answer</i>
+                <h5 class="teal-text">Are You Waiting for Hip or Knee<br/>Joint Replacement Surgery?</h5>
+                <h5 class="teal-text">Feeling like you could be<br/>doing more to prepare?</h5>
+            </div>
+        </div>
+    </div>
+
+    <div id="programs" class="section">
+        <div class="row">
+
+            <div class="col s12 m6 l4">
+                <div class="card sticky-action hoverable">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="/media/office.jpg">
+                        <span class="card-title readable">$299</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-2">Independent Programs</span>
+                        <p>Video lessons &amp; handouts that you will work through at your own pace.</p>
+                    </div>
+                    <div class="card-action">
+                        <span class="activator teal-text text-darken-2">Read More...</span>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-2">Independent Programs<i
+                                class="material-icons right">close</i></span>
+                        <ul class="check-list">
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>Video lessons &amp; handouts that you will work through at your own pace.</p></li>
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>Weekly emails to keep you on track and FIT for Surgery.</p></li>
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>Lifetime access program content.</p></li>
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>Upgrade to the Guided Program at any time.</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card sticky-action hoverable">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="/media/office.jpg">
+                        <span class="card-title readable">$699</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-2">Guided Programs</span>
+                        <p>Video lessons &amp; handouts with<br/>monthly 1-on-1 information sessions.</p>
+                    </div>
+                    <div class="card-action">
+                        <span class="activator teal-text text-darken-2">Read More...</span>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-2">Guided Programs<i
+                                class="material-icons right">close</i></span>
+                        <ul class="check-list">
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>60 Minute initial discovery call</p></li>
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>Monthly 1-on-1 coaching calls</p></li>
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>Video lessons &amp; handouts that you will work through at your own pace.</p></li>
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>Weekly emails to keep you on track and FIT for Surgery.</p></li>
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>Lifetime access program content.</p></li>
+                            <li>
+                                <div class="divider"></div>
+                            </li>
+                            <li><span><i class="material-icons teal-text">do_not_disturb_alt</i></span>
+                                <p>Availability is limited.<br/>Please <a href="#" onclick="slowScrollTo('#call')">Contact
+                                    Us</a> to enquire.</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col m12 l4">
+                <div class="card sticky-action hoverable">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="/media/office.jpg">
+                        <span class="card-title readable">$2599</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-2">Private Client</span>
+                        <p>Video lessons &amp; handouts with<br/>weekly 1-on-1 information sessions.</p>
+                    </div>
+                    <div class="card-action">
+                        <span class="activator teal-text">Read More...</span>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-2">Private Client<i
+                                class="material-icons right">close</i></span>
+                        <ul class="check-list">
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>60 Minute initial discovery call</p></li>
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>Weekly 1-on-1 coaching calls</p></li>
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>Video lessons &amp; handouts that you will work through at your own pace.</p></li>
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>Weekly emails to keep you on track and FIT for Surgery.</p></li>
+                            <li><span><i class="material-icons teal-text">check</i></span>
+                                <p>Lifetime access program content.</p></li>
+                            <li>
+                                <div class="divider"></div>
+                            </li>
+                            <li><span><i class="material-icons teal-text">do_not_disturb_alt</i></span>
+                                <p>Availability is limited.<br/>Please <a href="#" onclick="slowScrollTo('#call')">Contact
+                                    Us</a> to enquire.</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col s12 m12 l12 xl12">
+                <button onclick="slowScrollTo('#call')" class="btn btn-large waves-effect waves-light z-depth-3">Contact
+                    Us to Register
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+
+            <div class="row center">
+
+                <div class="col s4">
+                    <button onclick="slowScrollTo('#bio')" class="btn-floating btn-large"><i
+                            class="large material-icons">face</i></button>
+                    <h6 class="header col s12 ligh readable-on-dark">Meet&nbsp;Your<br/>Coach</h6>
+                </div>
+
+                <div class="col s4">
+                    <button onclick="slowScrollTo('#video')" class="btn-floating btn-large"><i
+                            class="large material-icons">play_arrow</i></button>
+                    <h6 class="header col s12 light readable-on-dark">Find&nbsp;Out<br/>More</h6>
+                </div>
+
+                <div class="col s4">
+                    <button onclick="slowScrollTo('#call')" class="btn-floating btn-large"><i
+                            class="large material-icons">phone</i></button>
+                    <h6 class="header col s12 light readable-on-dark">Request&nbsp;a<br/>Call</h6>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="/media/background2.jpg" alt="Unsplashed background img 2"></div>
+</div>
+
+
+<div class="container">
+    <div id="bio" class="section">
+
+        <div class="row">
+
+            <div class="col s12 m8 offset-m2 l8 offset-l2 xl4">
+                <h6 class="teal-text">&nbsp;</h6>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/media/Joint_Replacement_Physiotherapist.jpg"
+                             alt="Joint Replacement Physiotherapist: Carey Adam" class="responsive-img">
+                        <span class="card-title teal-text readable-on-bright">Carey Adam</span>
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Physiotherapist, BMR-PT, BPE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m12 l12 xl8">
+                <h3 class="teal-text">Meet Your Wellness Coach</h3>
+                <h5>Physiotherapist<br/>&amp; Joint Replacement Expert</h5>
+
+                <p>I have been a physiotherapist for over 12 years and have worked in all areas of arthritis and joint
+                    replacement care. My experience in joint replacements spans from one-on-one physiotherapy to
+                    triaging
+                    wait-lists, to dealing with
+                    surgeons, and even healthcare administration. Together we will focus on your pre &amp; post
+                    operative
+                    needs:</p>
+
+                <ul class="check-list" style="margin-left: 20px;">
+                    <li><span><i class="material-icons teal-text">check</i></span>
+                        <p>preparing for surgery</p></li>
+                    <li><span><i class="material-icons teal-text">check</i></span>
+                        <p>weight management</p></li>
+                    <li><span><i class="material-icons teal-text">check</i></span>
+                        <p>physiotherapy &amp; recovery</p></li>
+                </ul>
+
+                <p>Your preparation for surgery and the road through recovery can be challenging. Simple things, like
+                    getting out of bed, can be a struggle if you
+                    don't have guidance. The care your receive both pre &amp; post operation is going to be critical to
+                    your quality of life.
+                    So let's make the most of your rehabilitation both at home, and in your chosen
+                    physiotherapy clinic.
+                    Together we will create priorities, reduce your stress, and make the most of this life changing
+                    surgery!</p>
+
+            </div>
+
+        </div>
+
+        {{--<div class="row">--}}
+        {{--<div class="col s12 m12 l12 xl12">--}}
+            {{--<button onclick="slowScrollTo('#call')" class="btn btn-large waves-effect waves-light z-depth-3">Contact Carey</button>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12 l12 xl12">
+            <div class="divider"></div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container">
+    <div class="section">
+
+        <div class="row">
+
+            <div id="video" class="col s12 m12 l6">
+                <h5 class="teal-text text-lighten-2">&nbsp;</h5>
+                <div class="video-container z-depth-3">
+                    <iframe src="//www.youtube.com/embed/u1eLYZFXgCo?rel=0&controls=0&showinfo=0" frameborder="0"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div id="call" class="col s12 m12 l6 center">
+                <h4 class="teal-text text-lighten-2">Request a Call</h4>
+                <p id="callFormSuccess" style="display: none;" class="flow-text grey-text darken-3">Thank you!
+                    <br>We will
+                    contact you shortly!</p>
+                <ul id="callFormErrors" style="display: none;" class="flow-text red-text">Sorry, an error has occurred.
+                    Please double check your entries.
+                </ul>
+                <form id="callForm" class="col s12">
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="name"
+                                   name="name"
+                                   placeholder=""
+                                   required
+                                   type="text"
+                                   class="validate"
+                            >
+                            <label for="name">Name</label>
+                            <span class="helper-text" data-error="required" data-success=""></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email"
+                                   name="email"
+                                   placeholder=""
+                                   required
+                                   type="email"
+                                   class="validate"
+                            >
+                            <label for="email">Email</label>
+                            <span class="helper-text" data-error="required" data-success=""></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="phone"
+                                   name="phone"
+                                   placeholder=""
+                                   required
+                                   type="tel"
+                                   class="validate"
+                            >
+                            <label for="phone">Phone</label>
+                            <span class="helper-text" data-error="required" data-success="">Please include your area-code. (###) ###-####</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <button class="btn btn-large waves-effect waves-light z-depth-3" type="submit" name="action">
+                            Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="page-footer teal">
+    <div class="footer-copyright">
+        <div class="container">
+            &copy;Carey Adam
+            <script>document.write(new Date().getFullYear())</script>
+        </div>
+    </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/js/materialize.js"></script>
+<script src="/js/init.js"></script>
+<script>
+  function slowScrollTo(selector) {
+    $('html, body').animate({
+      scrollTop: $(selector).offset().top
+    }, 500);
+
+    $('.sidenav').sidenav('close');
+  }
+
+  $("#callForm").submit(function (event) {
+    $("#callFormErrors").hide();
+
+    var form_data = {};
+    var inputs = $("#callForm :input");
+    $.map(inputs, function (x, y) {
+      form_data[x.name] = $(x).val();
+    });
+
+    $.post("/api/contact", form_data)
+      .done(function () {
+        $("#callForm").hide();
+        $("#callFormSuccess").show();
+      })
+      .fail(function () {
+        $("#callFormErrors").show();
+      });
+
+    event.preventDefault();
+  });
+</script>
 </body>
 </html>
