@@ -102,7 +102,7 @@
                             <div class="col s12 m12 l12 xl12">
 
                                 <button id="stripeButton" class="right btn waves-effect waves-light">Instant Access</button>
-
+                                <button id="stripeSuccess" style="display: none;" class="right btn pulse blue">Success</button>
                             </div>
                         </div>
 
@@ -433,6 +433,15 @@
     </div>
 </footer>
 
+<div id="stripeSuccessModal" class="modal">
+    <div class="modal-content">
+        <h4 class="blue-text">Success</h4>
+        <p>You are now registered for the Independant Program.</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
 
 <!--  Scripts-->
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -441,6 +450,8 @@
 <script src="https://checkout.stripe.com/checkout.js"></script>
 <script>
   //start stripe
+  $('#stripeSuccessModal').modal();
+
   var handler = StripeCheckout.configure({
     key: 'pk_test_YjQRtwzef6blbmbPUXgYzB6v',
     image: "//s3.amazonaws.com/stripe-uploads/acct_16CLF5JNCZzjk9iBmerchant-icon-1434124749252-Stripe-128x128.png",
@@ -448,6 +459,17 @@
     token: function (token) {
       // You can access the token ID with `token.id`.
       // Get the token ID to your server-side code for use.
+
+      $.post("//api.jointreplacementcoach.dev/api/instant-access", {token: token.id})
+        .done(function () {
+          $("#stripeButton").hide();
+          $("#stripeSuccess").show();
+          $("#stripeSuccessModal").modal('open');
+        })
+        .fail(function () {
+          //$("#callFormErrors").show();
+        });
+
     }
   });
 
@@ -490,7 +512,7 @@
       form_data[x.name] = $(x).val();
     });
 
-    $.post("/api/contact", form_data)
+    $.post("api.jointreplacementcoach.dev/api/contact", form_data)
       .done(function () {
         $("#callForm").hide();
         $("#callFormSuccess").show();
