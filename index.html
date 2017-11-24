@@ -103,7 +103,7 @@
 
                                 <button id="stripeButton" class="right btn waves-effect waves-light">Instant Access
                                 </button>
-                                <button id="stripeSuccess" style="display: none;" class="right btn pulse blue">Success
+                                <button id="stripeSuccess" style="display: none;" data-target="stripeSuccessModal" class="modal-trigger right btn pulse blue">Success
                                 </button>
                             </div>
                         </div>
@@ -486,8 +486,7 @@
 
       //custom
       allowRememberMe: false,
-      currency: 'USD',
-      label: 'Purchase'
+      currency: 'USD'
     });
     e.preventDefault();
   });
