@@ -100,9 +100,17 @@
 
                         <div class="row">
                             <div class="col s12 m12 l12 xl12">
-                                <button class="right btn waves-effect waves-light">
-                                    Instant Access
-                                </button>
+                                <form action="/your-server-side-code" method="POST">
+                                    <script
+                                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                            data-key="pk_test_YjQRtwzef6blbmbPUXgYzB6v"
+                                            data-amount="999"
+                                            data-name="JointReplacements"
+                                            data-description="Widget"
+                                            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                            data-locale="auto">
+                                    </script>
+                                </form>
                             </div>
                         </div>
 
