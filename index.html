@@ -100,17 +100,9 @@
 
                         <div class="row">
                             <div class="col s12 m12 l12 xl12">
-                                <form action="/your-server-side-code" method="POST">
-                                    <script
-                                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                            data-key="pk_test_YjQRtwzef6blbmbPUXgYzB6v"
-                                            data-amount="999"
-                                            data-name="JointReplacements"
-                                            data-description="Widget"
-                                            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                                            data-locale="auto">
-                                    </script>
-                                </form>
+
+                                <button id="stripeButton" class="right btn waves-effect waves-light">Instant Access</button>
+
                             </div>
                         </div>
 
@@ -446,7 +438,41 @@
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="/js/materialize.js"></script>
 <script src="/js/init.js"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
 <script>
+  //start stripe
+  var handler = StripeCheckout.configure({
+    key: 'pk_test_YjQRtwzef6blbmbPUXgYzB6v',
+    image: "//s3.amazonaws.com/stripe-uploads/acct_16CLF5JNCZzjk9iBmerchant-icon-1434124749252-Stripe-128x128.png",
+    locale: 'auto',
+    token: function (token) {
+      // You can access the token ID with `token.id`.
+      // Get the token ID to your server-side code for use.
+    }
+  });
+
+  document.getElementById('stripeButton').addEventListener('click', function (e) {
+    // Open Checkout with further options:
+    handler.open({
+      name: 'Joint Replacement Coach',
+      description: 'Independent Program',
+      remember:false,
+      amount: 29900,
+
+      //custom
+      allowRememberMe:false,
+      currency:'USD',
+      label:'Purchase'
+    });
+    e.preventDefault();
+  });
+
+  // Close Checkout on page navigation:
+  window.addEventListener('popstate', function () {
+    handler.close();
+  });
+  //end stripe
+
   function slowScrollTo(selector) {
     $('html, body').animate({
       scrollTop: $(selector).offset().top
