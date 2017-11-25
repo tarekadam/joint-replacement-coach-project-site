@@ -116,3 +116,41 @@ footer.page-footer {
 .btn-floating-label{
   margin-top: 15px;
 }
+
+ /* start:parallax */
+.parallax-smooth {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 1px;
+  perspective: 1px;
+}
+
+.parallax-smooth-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax-smooth-layer-base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.parallax-smooth-layer-back {
+  -webkit-transform: translateZ(-1px) scale(2);
+  transform: translateZ(-1px) scale(2);
+}
+
+.parallax-smooth-area{
+  background: none;
+}
+
+.parallax-smooth-cover{
+  background-color: white;
+}
+
+/* end: parallax*/
+
