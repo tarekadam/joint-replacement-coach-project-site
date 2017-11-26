@@ -6,6 +6,22 @@
  * Made By MaterializeCSS.com
  */
 
+.bg-brick{
+  background-image: url("/theme/wall2/Parallax.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.bg-wood{
+  background-image: url("/theme/wall2/Parallax.jpg");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.bg-color{
+  background-color: white;
+}
+
 nav ul a,
 nav .brand-logo {
   color: #444;
@@ -13,6 +29,10 @@ nav .brand-logo {
 
 p {
   line-height: 2rem;
+}
+
+#banner{
+  padding-bottom: 15px;
 }
 
 .button-collapse {
@@ -116,41 +136,4 @@ footer.page-footer {
 .btn-floating-label{
   margin-top: 15px;
 }
-
- /* start:parallax */
-.parallax-smooth {
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-perspective: 1px;
-  perspective: 1px;
-}
-
-.parallax-smooth-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.parallax-smooth-layer-base {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-.parallax-smooth-layer-back {
-  -webkit-transform: translateZ(-1px) scale(2);
-  transform: translateZ(-1px) scale(2);
-}
-
-.parallax-smooth-area{
-  background: none;
-}
-
-.parallax-smooth-cover{
-  background-color: white;
-}
-
-/* end: parallax*/
 
