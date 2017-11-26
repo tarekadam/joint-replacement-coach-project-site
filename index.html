@@ -523,7 +523,7 @@
       // You can access the token ID with `token.id`.
       // Get the token ID to your server-side code for use.
 
-      $.post("//api.jointreplacementcoach.dev/api/instant-access", {token: token.id})
+      $.post("//api.jointreplacementcoach.dev/api/instant-access", {token: token.id, package: 'independent'})
         .done(function () {
           $("#stripeButton").hide();
           $("#stripeSuccess").show();
