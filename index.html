@@ -516,7 +516,7 @@
   $('#stripeErrorModal').modal();
 
   var handler = StripeCheckout.configure({
-    key: 'pk_test_YjQRtwzef6blbmbPUXgYzB6v',
+    key: (location.hostname.indexOf('.dev') !== -1)? 'pk_test_YjQRtwzef6blbmbPUXgYzB6v':'pk_live_v8dJSo0uTsQ46hSfklVKC2sY',
     image: "//s3.amazonaws.com/stripe-uploads/acct_16CLF5JNCZzjk9iBmerchant-icon-1434124749252-Stripe-128x128.png",
     locale: 'auto',
     token: function (token) {
