@@ -511,6 +511,8 @@
 <script src="/js/init.js"></script>
 <script src="https://checkout.stripe.com/checkout.js"></script>
 <script>
+    var api_url = (location.hostname.indexOf('.dev') !== -1)? '//api.jointreplacementcoach.dev':'//api.jointreplacementcoach.com';
+
   //start stripe
   $('#stripeSuccessModal').modal();
   $('#stripeErrorModal').modal();
@@ -523,7 +525,7 @@
       // You can access the token ID with `token.id`.
       // Get the token ID to your server-side code for use.
 
-      $.post("//api.jointreplacementcoach.dev/api/stripe-purchase", {token: token.id, package: 'independent'})
+      $.post(api_url + "/api/stripe-purchase", {token: token.id, package: 'independent'})
         .done(function () {
           $("#stripeButton").hide();
           $("#stripeSuccess").show();
@@ -574,7 +576,7 @@
       form_data[x.name] = $(x).val();
     });
 
-    $.post("//api.jointreplacementcoach.dev/api/contact", form_data)
+    $.post(api_url + "/api/contact", form_data)
       .done(function () {
         $("#callForm").hide();
         $("#callFormSuccess").show();
