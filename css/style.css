@@ -136,3 +136,10 @@ footer.page-footer {
   margin-top: 15px;
 }
 
+.price{
+  font-size: 16px !important;
+}
+
+.price .price-hint{
+  font-size: 12px !important;
+}
