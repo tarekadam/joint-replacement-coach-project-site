@@ -42,7 +42,7 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="#" onclick="slowScrollTo('#programs')">Programs</a></li>
                 <li><a href="#" onclick="slowScrollTo('#video')">Information</a></li>
-                <li><a href="#" onclick="slowScrollTo('#call')">Contact Us</a></li>
+                <li><a href="#" onclick="slowScrollTo('#call')">Book a Free Consultation</a></li>
             </ul>
 
             <ul id="nav-mobile" class="sidenav">
@@ -57,7 +57,7 @@
                 </li>
                 <li><a href="#" onclick="slowScrollTo('#programs')">Programs</a></li>
                 <li><a href="#" onclick="slowScrollTo('#video')">Information</a></li>
-                <li><a href="#" onclick="slowScrollTo('#call')">Contact Us</a></li>
+                <li><a href="#" onclick="slowScrollTo('#call')">Book a Free Consultation</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger button-collapse">
                 <i class="material-icons">menu</i>
@@ -293,7 +293,7 @@
                 <div class="col s4">
                     <button onclick="slowScrollTo('#call')" class="btn-floating btn-large"><i
                             class="large material-icons">phone</i></button>
-                    <h6 class="header col s12 grey-text text-darken-4 readable-on-bright">Request&nbsp;a<br/>Call
+                    <h6 class="header col s12 grey-text text-darken-4 readable-on-bright">Book&nbsp;a&nbsp;Free<br/>Consultation
                     </h6>
                 </div>
 
@@ -329,40 +329,16 @@
                     <h3 class="teal-text">Meet Your Wellness Coach</h3>
                     <h5>Physiotherapist<br/>&amp; Joint Replacement Expert</h5>
 
-                    <p>I have been a physiotherapist for over 12 years and have worked in all areas of arthritis
-                        and
-                        joint
-                        replacement care. My experience in joint replacements spans from one-on-one
-                        physiotherapy to
-                        triaging
-                        wait-lists, to dealing with
-                        surgeons, and even healthcare administration. Together we will focus on your pre &amp;
-                        post
-                        operative
-                        needs:</p>
+                    <p>I’m Carey Adam, Physiotherapist, Joint Replacement Expert, and Wellness Coach. I have worked
+                        in all aspects of joint replacement prep and rehabilitation. With my help, you won't have to
+                        feel helpless and worry as you wait for surgery. There is a lot you can do to get
+                        FIT for your joint replacement.</p>
 
-                    <ul class="check-list" style="margin-left: 20px;">
-                        <li><span><i class="material-icons teal-text">check</i></span>
-                            <p>preparing for surgery</p></li>
-                        <li><span><i class="material-icons teal-text">check</i></span>
-                            <p>weight management</p></li>
-                        <li><span><i class="material-icons teal-text">check</i></span>
-                            <p>physiotherapy &amp; recovery</p></li>
-                    </ul>
+                    <p>I offer FREE 30 minute consultations and welcome the opportunity to discuss your upcoming
+                        surgery concerns or your recovery needs. This gives you a great opportunity to ask questions
+                        and learn more about my programs and coaching service.</p>
 
-                    <p>Your preparation for surgery and the road through recovery can be challenging. Simple
-                        things,
-                        like
-                        getting out of bed, can be a struggle if you
-                        don't have guidance. The care your receive both pre &amp; post operation is going to be
-                        critical
-                        to
-                        your quality of life.
-                        So let's make the most of your rehabilitation both at home, and in your chosen
-                        physiotherapy clinic.
-                        Together we will create priorities, reduce your stress, and make the most of this life
-                        changing
-                        surgery!</p>
+                    <p>Book your free 30 minute consultation now by filling out the form bellow!</p>
 
                 </div>
 
@@ -395,6 +371,7 @@
 
                 <div id="call" class="col s12 m12 l12 xl6 center">
                     <h4 class="teal-text text-lighten-2">Request a Call</h4>
+                    <p id="callFormInstructions">Please enter your contact details to get a free 30 minute consultation or to register for one of my programs.</p>
                     <p id="callFormSuccess" style="display: none;" class="flow-text grey-text darken-3">Thank
                         you!
                         <br>We will
@@ -513,14 +490,14 @@
 <script src="/js/init.js"></script>
 <script src="https://checkout.stripe.com/checkout.js"></script>
 <script>
-    var api_url = (location.hostname.indexOf('.dev') !== -1)? '//api.jointreplacementcoach.dev':'//api.jointreplacementcoach.com';
+  var api_url = (location.hostname.indexOf('.dev') !== - 1) ? '//api.jointreplacementcoach.dev' : '//api.jointreplacementcoach.com';
 
   //start stripe
   $('#stripeSuccessModal').modal();
   $('#stripeErrorModal').modal();
 
   var handler = StripeCheckout.configure({
-    key: (location.hostname.indexOf('.dev') !== -1)? 'pk_test_YjQRtwzef6blbmbPUXgYzB6v':'pk_live_v8dJSo0uTsQ46hSfklVKC2sY',
+    key: (location.hostname.indexOf('.dev') !== - 1) ? 'pk_test_YjQRtwzef6blbmbPUXgYzB6v' : 'pk_live_v8dJSo0uTsQ46hSfklVKC2sY',
     image: "//s3.amazonaws.com/stripe-uploads/acct_16CLF5JNCZzjk9iBmerchant-icon-1434124749252-Stripe-128x128.png",
     locale: 'auto',
     token: function (token) {
@@ -581,6 +558,7 @@
 
     $.post(api_url + "/api/contact", form_data)
       .done(function () {
+        $("#callFormInstructions").hide();
         $("#callForm").hide();
         $("#callFormSuccess").show();
       })
