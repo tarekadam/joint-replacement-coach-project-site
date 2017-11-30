@@ -494,6 +494,8 @@
     <div class="modal-content">
         <h4 class="red-text">Card Error</h4>
         <div class="flow-text">
+            <p>Our credit card processor responded with the following information:</p>
+            <p id="stripeErrorMessage" class="red-text"></p>
             <p>We were unable to process your registration.
                 <br/>Please try again or
                 <a href="#" onclick="slowScrollTo('#call')" class="modal-action modal-close">contact us</a>
@@ -526,12 +528,13 @@
       // Get the token ID to your server-side code for use.
 
       $.post(api_url + "/api/stripe-purchase", {token: token.id, package: 'independent'})
-        .done(function () {
+        .done(function (response) {
           $("#stripeButton").hide();
           $("#stripeSuccess").show();
           $("#stripeSuccessModal").modal('open');
         })
-        .fail(function () {
+        .fail(function (response) {
+          $("#ccError").text(response.responseJSON.message);
           $("#stripeErrorModal").modal('open');
         });
 
