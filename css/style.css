@@ -143,3 +143,8 @@ footer.page-footer {
 .price .price-hint{
   font-size: 12px !important;
 }
+
+.read-more .material-icons{
+  position: relative;
+  top: +5px;
+}
