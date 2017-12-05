@@ -124,7 +124,7 @@
                         <div class="card-action">
                             <div class="row">
                                 <div class="col s12 m12 l12 xl12">
-                                    <span class="read-more activator teal-text text-darken-2">
+                                    <span onclick="trackMoreInfoClick('Independent Programs')" class="read-more activator teal-text text-darken-2">
                                         <i class="material-icons">info_outline</i>
                                         Read More...
                                     </span>
@@ -180,7 +180,7 @@
 
                             <div class="row">
                                 <div class="col s12 m12 l12 xl12">
-                                    <span class="read-more activator teal-text text-darken-2">
+                                    <span onclick="trackMoreInfoClick('Guided Programs')" class="read-more activator teal-text text-darken-2">
                                         <i class="material-icons">info_outline</i>
                                         Read More...
                                     </span>
@@ -240,7 +240,7 @@
                         <div class="card-action">
                             <div class="row">
                                 <div class="col s12 m12 l12 xl12">
-                                    <span class="read-more activator teal-text text-darken-2">
+                                    <span onclick="trackMoreInfoClick('Private Client Service')" class="read-more activator teal-text text-darken-2">
                                         <i class="material-icons">info_outline</i>
                                         Read More...
                                     </span>
@@ -589,6 +589,16 @@
 
     event.preventDefault();
   });
+
+  function trackMoreInfoClick(label) {
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'UI-UX',
+      eventAction: 'OpenMoreInfo',
+      eventLabel: label,
+      eventValue: 1
+    });
+  }
 </script>
 
 </body>
