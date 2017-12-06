@@ -5,13 +5,17 @@
     <script async src="//www.googletagmanager.com/gtag/js?id=UA-64589781-2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
       gtag('js', new Date());
 
       gtag('config', 'UA-64589781-2');
     </script>
 
-    <meta name="google-site-verification" content="zsHbN4vPL_d04l3vYMLLlVe3iJiFvTnxfWDkmq3s1cw" />
+    <meta name="google-site-verification" content="zsHbN4vPL_d04l3vYMLLlVe3iJiFvTnxfWDkmq3s1cw"/>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -124,7 +128,8 @@
                         <div class="card-action">
                             <div class="row">
                                 <div class="col s12 m12 l12 xl12">
-                                    <span onclick="trackMoreInfoClick('Independent Programs')" class="read-more activator teal-text text-darken-2">
+                                    <span onclick="trackMoreInfoClick('Independent Programs')"
+                                          class="read-more activator teal-text text-darken-2">
                                         <i class="material-icons">info_outline</i>
                                         Read More...
                                     </span>
@@ -180,7 +185,8 @@
 
                             <div class="row">
                                 <div class="col s12 m12 l12 xl12">
-                                    <span onclick="trackMoreInfoClick('Guided Programs')" class="read-more activator teal-text text-darken-2">
+                                    <span onclick="trackMoreInfoClick('Guided Programs')"
+                                          class="read-more activator teal-text text-darken-2">
                                         <i class="material-icons">info_outline</i>
                                         Read More...
                                     </span>
@@ -240,7 +246,8 @@
                         <div class="card-action">
                             <div class="row">
                                 <div class="col s12 m12 l12 xl12">
-                                    <span onclick="trackMoreInfoClick('Private Client Service')" class="read-more activator teal-text text-darken-2">
+                                    <span onclick="trackMoreInfoClick('Private Client Service')"
+                                          class="read-more activator teal-text text-darken-2">
                                         <i class="material-icons">info_outline</i>
                                         Read More...
                                     </span>
@@ -392,7 +399,8 @@
 
                 <div id="call" class="col s12 m12 l12 xl6 center">
                     <h4 class="teal-text text-lighten-2">Request a Call</h4>
-                    <p id="callFormInstructions">Please enter your contact details to get a free 30 minute consultation or to register for one of my programs.</p>
+                    <p id="callFormInstructions">Please enter your contact details to get a free 30 minute consultation
+                        or to register for one of my programs.</p>
                     <p id="callFormSuccess" style="display: none;" class="flow-text grey-text darken-3">Thank
                         you!
                         <br>We will
@@ -591,7 +599,10 @@
   });
 
   function trackMoreInfoClick(label) {
-    ga('send', 'event', { eventCategory: 'UIUX', eventAction: 'OpenMoreInfo', eventLabel: label, eventValue: 1});
+    gtag('event', 'view_item', {
+      'content_type': 'info-box',
+      'event_label': label
+    });
   }
 </script>
 
