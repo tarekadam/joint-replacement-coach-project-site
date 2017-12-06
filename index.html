@@ -591,12 +591,7 @@
   });
 
   function trackMoreInfoClick(label) {
-    ga('send', {
-      hitType: 'event',
-      eventCategory: 'UI-UX',
-      eventAction: 'OpenMoreInfo',
-      eventLabel: label
-    });
+    ga('send', 'event', { eventCategory: 'UI-UX', eventAction: 'OpenMoreInfo', eventLabel: label, eventValue: 1});
   }
 </script>
 
