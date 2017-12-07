@@ -590,9 +590,19 @@
         $("#callFormInstructions").hide();
         $("#callForm").hide();
         $("#callFormSuccess").show();
+
+        gtag('event', 'generate_lead', {
+          'content_type': 'form-fill',
+          'event_label': 'free 30 minute consult'
+        });
+
       })
       .fail(function () {
         $("#callFormErrors").show();
+        gtag('event', 'user_error', {
+          'content_type': 'form-fill',
+          'event_label': 'free 30 minute consult'
+        });
       });
 
     event.preventDefault();
