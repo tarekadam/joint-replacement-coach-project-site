@@ -500,7 +500,7 @@
     <div class="modal-content">
         <h4 class="red-text">Card Error</h4>
         <div class="flow-text">
-            <p>Our credit card processor responded with the following information:</p>
+            <p>Our credit card processor responded with the following information:<b id="ccError"></b></p>
             <p id="stripeErrorMessage" class="red-text"></p>
             <p>We were unable to process your registration.
                 <br/>Please try again or
@@ -533,15 +533,36 @@
       // You can access the token ID with `token.id`.
       // Get the token ID to your server-side code for use.
 
+      gtag('event', 'add_payment_info');
+
       $.post(api_url + "/api/stripe-purchase", {token: token.id, package: 'independent'})
         .done(function (response) {
           $("#stripeButton").hide();
           $("#stripeSuccess").show();
           $("#stripeSuccessModal").modal('open');
         })
+        .success(function (response) {
+
+          gtag('event', 'purchase', {
+            'transaction_id': response.transaction_id,
+            'value': 249.00
+          });
+
+        })
         .fail(function (response) {
-          $("#ccError").text(response.responseJSON.message);
+          var data = JSON.parse(response.responseText);
+          var message = data.message;
+
+
+          $("#ccError").text(message);
           $("#stripeErrorModal").modal('open');
+
+          gtag('event', 'payment_failed', {
+            event_category: 'ecommerce',
+            description: message,
+            fatal: false
+          });
+
         });
 
     }
@@ -558,6 +579,12 @@
       allowRememberMe: false,
       currency: 'USD'
     });
+
+    gtag('event', 'begin_checkout', {
+      'content_type': 'stripe',
+      'event_label': 'Independent Program'
+    });
+
     e.preventDefault();
   });
 
