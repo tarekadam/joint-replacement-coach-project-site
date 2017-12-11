@@ -252,6 +252,10 @@
                                     <button id="stripeButton" class="right btn waves-effect waves-light">Instant
                                         Access
                                     </button>
+                                    <button id="stripeProcessing" style="display: none;"
+                                            data-target="stripeProcessingModal"
+                                            class="modal-trigger right btn pulse yellow">Processing...
+                                    </button>
                                     <button id="stripeSuccess" style="display: none;"
                                             data-target="stripeSuccessModal"
                                             class="modal-trigger right btn pulse blue">Success
@@ -583,6 +587,18 @@
 
 <!-- end page -->
 
+<div id="stripeProcessingModal" class="modal">
+    <div class="modal-content">
+        <h4 class="blue-text">Processing</h4>
+        <div class="flow-text">
+            <p>Please wait while we process your payment.</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
+
 <div id="stripeSuccessModal" class="modal">
     <div class="modal-content">
         <h4 class="blue-text">Success</h4>
@@ -605,7 +621,7 @@
             <p id="stripeErrorMessage" class="red-text"></p>
             <p>We were unable to process your registration.
                 <br/>Please try again or
-                <a href="#" onclick="slowScrollTo('#call')" class="modal-action modal-close">contact us</a>
+                <a href="#" onclick="slowScrollTo('#call')" class="modal-action modal-close">request a call</a>
                 for assistance.</p>
         </div>
     </div>
@@ -623,6 +639,7 @@
   var api_url = (location.hostname.indexOf('.dev') !== - 1) ? '//api.jointreplacementcoach.dev' : '//api.jointreplacementcoach.com';
 
   //start stripe
+  $('#stripeProcessingModal').modal();
   $('#stripeSuccessModal').modal();
   $('#stripeErrorModal').modal();
 
@@ -634,15 +651,19 @@
       // You can access the token ID with `token.id`.
       // Get the token ID to your server-side code for use.
 
+      $("#stripeButton").hide();
+      $("#stripeProcessing").show();
+
       gtag('event', 'add_payment_info');
 
       $.post(api_url + "/api/stripe-purchase", {token: token.id, package: 'independent'})
         .done(function (response) {
-          $("#stripeButton").hide();
-          $("#stripeSuccess").show();
-          $("#stripeSuccessModal").modal('open');
+          $("#stripeProcessing").hide();
         })
         .success(function (response) {
+
+          $("#stripeSuccess").show();
+          $("#stripeSuccessModal").modal('open');
 
           gtag('event', 'purchase', {
             event_category: 'ecommerce',
@@ -659,6 +680,8 @@
 
           $("#ccError").text(message);
           $("#stripeErrorModal").modal('open');
+          $("#stripeProcessing").hide();
+          $("#stripeButton").show();
 
           gtag('event', 'payment_failed', {
             event_category: 'ecommerce',
