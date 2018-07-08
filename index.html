@@ -159,8 +159,8 @@
                 <li>
                     <div class="divider"></div>
                 </li>
-                <li><a href="#" onclick="slowScrollTo('#programs')">Programs</a></li>
-                <li><a href="#" onclick="slowScrollTo('#video')">Information</a></li>
+                <!--<li><a href="#" onclick="slowScrollTo('#programs')">Programs</a></li>-->
+                <!--<li><a href="#" onclick="slowScrollTo('#video')">Information</a></li>-->
                 <li><a href="#" onclick="slowScrollTo('#call')">Book a Free Consultation</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger button-collapse">
@@ -443,12 +443,12 @@
                 <div class="col s12 m12 l8 xl8">
                     <h5>Physiotherapist<br/>&amp; Joint Replacement Expert</h5>
 
-                    <p>I’m Carey Adam, Physiotherapist, Joint Replacement Expert, and Wellness Coach. I have worked
+                    <p>I’m Carey Adam, Physiotherapist and Joint Replacement Expert. I have worked
                         in all aspects of joint replacement prep and rehabilitation. With my help, you won't have to
                         feel helpless and worry as you wait for surgery. There is a lot you can do to get
                         FIT for your hip or knee joint replacement.</p>
 
-                    <p>I offer FREE 30 minute consultations and welcome the opportunity to discuss your upcoming
+                    <p>I offer FREE 30 minute appointment and welcome the opportunity to discuss your upcoming
                         surgery concerns or your recovery needs. This gives you a great opportunity to ask questions
                         and learn more about my programs and coaching service.</p>
 
@@ -471,9 +471,8 @@
             <div class="row">
 
                 <div id="call" class="col s12 m12 l12 xl12 center">
-                    <h4 class="teal-text text-lighten-2">Request a Call</h4>
-                    <p id="callFormInstructions">Please enter your contact details to get a free 30 minute consultation
-                        or to register for one of my programs.</p>
+                    <h4 class="teal-text text-lighten-2">Book an Appointment</h4>
+                    <p id="callFormInstructions">Please enter your contact details.</p>
                     <p id="callFormSuccess" style="display: none;" class="flow-text grey-text darken-3">Thank
                         you!
                         <br>We will
@@ -587,7 +586,7 @@
 
 <!-- end page -->
 
-<div id="stripeProcessingModal" class="modal">
+<!--<div id="stripeProcessingModal" class="modal">
     <div class="modal-content">
         <h4 class="blue-text">Processing</h4>
         <div class="flow-text">
@@ -628,23 +627,23 @@
     <div class="modal-footer">
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
-</div>
+</div>-->
 
 <!--  Scripts-->
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="/js/materialize.js"></script>
 <script src="/js/init.js"></script>
-<script src="https://checkout.stripe.com/checkout.js"></script>
+<!--<script src="https://checkout.stripe.com/checkout.js"></script>-->
 <script>
-  var api_url = (location.hostname.indexOf('.dev') !== - 1) ? '//api.jointreplacementcoach.dev' : '//api.jointreplacementcoach.com';
+  var api_url = (location.hostname.indexOf('.test') !== - 1) ? '//jointreplacementcoach.test' : '//api.jointreplacementcoach.com';
 
   //start stripe
-  $('#stripeProcessingModal').modal();
+/*  $('#stripeProcessingModal').modal();
   $('#stripeSuccessModal').modal();
   $('#stripeErrorModal').modal();
 
   var handler = StripeCheckout.configure({
-    key: (location.hostname.indexOf('.dev') !== - 1) ? 'pk_test_YjQRtwzef6blbmbPUXgYzB6v' : 'pk_live_v8dJSo0uTsQ46hSfklVKC2sY',
+    key: (location.hostname.indexOf('.test') !== - 1) ? 'pk_test_YjQRtwzef6blbmbPUXgYzB6v' : 'pk_live_v8dJSo0uTsQ46hSfklVKC2sY',
     image: "//s3.amazonaws.com/stripe-uploads/acct_16CLF5JNCZzjk9iBmerchant-icon-1434124749252-Stripe-128x128.png",
     locale: 'auto',
     token: function (token) {
@@ -692,27 +691,27 @@
         });
 
     }
-  });
+  });*/
 
-  document.getElementById('stripeButton').addEventListener('click', function (e) {
-    // Open Checkout with further options:
-    handler.open({
-      name: 'Joint Replacement Coach',
-      description: 'Independent Program',
-      amount: 24900,
-
-      //custom
-      allowRememberMe: false,
-      currency: 'USD'
-    });
-
-    gtag('event', 'begin_checkout', {
-      content_type: 'stripe',
-      event_label: 'Independent Program'
-    });
-
-    e.preventDefault();
-  });
+  // document.getElementById('stripeButton').addEventListener('click', function (e) {
+  //   // Open Checkout with further options:
+  //   handler.open({
+  //     name: 'Joint Replacement Coach',
+  //     description: 'Independent Program',
+  //     amount: 24900,
+  //
+  //     //custom
+  //     allowRememberMe: false,
+  //     currency: 'USD'
+  //   });
+  //
+  //   gtag('event', 'begin_checkout', {
+  //     content_type: 'stripe',
+  //     event_label: 'Independent Program'
+  //   });
+  //
+  //   e.preventDefault();
+  // });
 
   // Close Checkout on page navigation:
   window.addEventListener('popstate', function () {
