@@ -418,11 +418,11 @@
             </div>
         </div>
 
-        <!--<div class="row">
+        <div class="row">
             <div class="col s12 m12 l12 xl12">
                 <div class="divider"></div>
             </div>
-        </div>-->
+        </div>
 
 
         <div id="bio" class="section">
@@ -592,7 +592,7 @@
 
 <!-- end page -->
 
-<!--<div id="stripeProcessingModal" class="modal">
+<div id="stripeProcessingModal" class="modal">
     <div class="modal-content">
         <h4 class="blue-text">Processing</h4>
         <div class="flow-text">
@@ -633,18 +633,18 @@
     <div class="modal-footer">
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
-</div>-->
+</div>
 
 <!--  Scripts-->
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="/js/materialize.js"></script>
 <script src="/js/init.js"></script>
-<!--<script src="https://checkout.stripe.com/checkout.js"></script>-->
+<script src="https://checkout.stripe.com/checkout.js"></script>
 <script>
   var api_url = (location.hostname.indexOf('.test') !== - 1) ? '//api.jointreplacementcoach.test' : '//api.jointreplacementcoach.com';
 
   //start stripe
-/*  $('#stripeProcessingModal').modal();
+  $('#stripeProcessingModal').modal();
   $('#stripeSuccessModal').modal();
   $('#stripeErrorModal').modal();
 
@@ -697,27 +697,27 @@
         });
 
     }
-  });*/
+  });
 
-  // document.getElementById('stripeButton').addEventListener('click', function (e) {
-  //   // Open Checkout with further options:
-  //   handler.open({
-  //     name: 'Joint Replacement Coach',
-  //     description: 'Independent Program',
-  //     amount: 24900,
-  //
-  //     //custom
-  //     allowRememberMe: false,
-  //     currency: 'USD'
-  //   });
-  //
-  //   gtag('event', 'begin_checkout', {
-  //     content_type: 'stripe',
-  //     event_label: 'Independent Program'
-  //   });
-  //
-  //   e.preventDefault();
-  // });
+  document.getElementById('stripeButton').addEventListener('click', function (e) {
+    // Open Checkout with further options:
+    handler.open({
+      name: 'Joint Replacement Coach',
+      description: 'Independent Program',
+      amount: 24900,
+
+      //custom
+      allowRememberMe: false,
+      currency: 'USD'
+    });
+
+    gtag('event', 'begin_checkout', {
+      content_type: 'stripe',
+      event_label: 'Independent Program'
+    });
+
+    e.preventDefault();
+  });
 
   // Close Checkout on page navigation:
   window.addEventListener('popstate', function () {
